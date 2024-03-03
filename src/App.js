@@ -9,9 +9,10 @@ import "boxicons";
 import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage";
 import AdminLogin from "./pages/AdminLogin";
-
+import AccountsData from "./pages/AccountsData";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import ContactTable from "./pages/ContactTable";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           <Route index element={<Dashboard/>} />
           <Route path="/tags" element={<Tagcreate />} />
           <Route path="/tagtable" element={<TagTable />} />
-
+<Route path="/accounts" element={<AccountsData/>}/>
+<Route path='/contacts' element={<ContactTable/>}/>
           <Route path="*" element={<NoPage />} />
           {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
         </Route>

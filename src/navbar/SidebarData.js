@@ -36,12 +36,12 @@ const SidebarItems = [
         subNav: [
           {
             title: "Accounts",
-            path: "/submenu1",
+            path: "/accounts",
             icon: <MdAccountBalance />,
           },
           {
             title: "Contacts",
-            path: "/submenu2",
+            path: "/contacts",
             icon: <IoIosContacts />,
           },
          

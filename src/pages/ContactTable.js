@@ -1,0 +1,89 @@
+import React, { useState } from "react";
+import accounts from './AccountDumy';
+import './accountsdata.css'
+
+
+const ContactTable = () => {
+    const itemsPerPage = 3; // Number of items per page
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calculate total number of pages
+  const totalPages = Math.ceil(accounts.length / itemsPerPage);
+
+  // Calculate index range for current page
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, accounts.length);
+
+  // Function to handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Function to handle next page
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  // Function to handle previous page
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  return (
+   
+        <div style={{padding:'20px'}}>
+          <table className="my-table col-12 " >
+            <thead>
+              <tr>
+                <th>NAME</th>
+                <th>Type</th>
+                <th>Invoice</th>
+                <th>Credits</th>
+                <th>Tasks</th>
+                <th>Team</th>
+                <th>Tags</th>
+                <th>Proposals</th>
+                <th>Unread</th>
+                <th>Chats</th>
+                <th>Pending</th>
+              </tr>
+            </thead>
+            <tbody>
+              {accounts.slice(startIndex, endIndex).map((account) => (
+                <tr key={account.id}>
+                  <td>{account.name}</td>
+                  <td>{account.type}</td>
+                  <td>{account.invoice}</td>
+                  <td>{account.credits}</td>
+                  <td>{account.tasks}</td>
+                  <td>{account.team}</td>
+                  <td>{account.tags}</td>
+                  <td>{account.proposals}</td>
+                  <td>{account.unread}</td>
+                  <td>{account.chats}</td>
+                  <td>{account.pending}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+    
+          {/* Pagination */}
+          <div>
+            <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+              Previous
+            </button>
+            <span> Page {currentPage} of {totalPages} </span>
+            <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+              Next
+            </button>
+          </div>
+        </div>
+      );
+    };
+ 
+
+export default ContactTable
