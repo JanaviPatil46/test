@@ -12,7 +12,7 @@ function SearchBar({ searchbar, formclose }) {
             <IoSearch className="icon" />
             <input type="text" placeholder="Search..." className="col-12" />
           </li>
-          <button type="button" onClick={() => formclose()} style={{ margin: "10px" }} className="cancle-btn">
+          <button type="button" onClick={() => formclose()} style={{ margin: "10px" }} className="cancle-search">
             <RxCross2 />
           </button>
         </div>

@@ -2,6 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import SidebarData from "../navbar/SidebarData";
 import React, { useState, useEffect } from "react";
 import "./layout.css";
+import user from "../img/user.png"
 import logo from "../img/logo.svg";
 import { FaAngleLeft } from "react-icons/fa";
 import "boxicons";
@@ -145,10 +146,10 @@ const Layout = () => {
                   </ul>
                 </div>
                 {/* User Info, Profile Image, Profile Link, and Logout Button */}
-                <div className={`bottom-menu ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+                <div className={`bottom-menu ${sidebarOpen ? "" : "close"}`}>
                   <div className="user-info" style={{ display: 'flex', justifyContent: 'center', alighItems: 'center' }}>
-                    <img src={loggedIn.profileImage} alt="" className="profile-image" />
-                    <div className="user-details">
+                    <img src={user} alt="" className="profile-image" />
+                    <div className="user-details"  >
                       <span className="user-name">abc</span>
                       <br />
                       <span className="user-email">abc@gmail.com</span>
